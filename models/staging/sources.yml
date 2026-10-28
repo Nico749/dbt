@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: databricks_raw
+    database: dbt            # the catalog
+    schema: dbt_practice     # the schema holding raw_orders
+    tables:
+      - name: raw_orders
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+              - unique
